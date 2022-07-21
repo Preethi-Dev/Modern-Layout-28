@@ -1,5 +1,150 @@
 /* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Variables */
+:root {
+  --primary: #111111;
+  --secondary: #85f1c1;
+}
+
 /* Base Styles */
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+main .title h1 {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+
+main .text p {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 36px;
+  text-align: justify;
+  text-transform: uppercase;
+}
+
+main .text p:nth-child(2) {
+  font-size: 0.875rem;
+  line-height: 21px;
+}
+
 /* Mobile Styles */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+
+  grid-gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+main > * {
+  grid-column: 1 / -1;
+}
+
+main .title h1 {
+  font-size: 5.1875rem;
+}
+
+main .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .arrow {
+  grid-column: 1;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 590px) {
+  main {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 200px 500px;
+  }
+
+  main .title {
+    grid-row: 1;
+  }
+
+  main .title h1 {
+    font-size: 8.1875rem;
+  }
+
+  main .text {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    align-self: stretch;
+  }
+
+  main .image {
+    grid-column: span 3 / -1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  main .arrow {
+    grid-row-start: 2;
+    align-self: end;
+  }
+}
+
+/* Large Tablet and Laptop Styles */
+@media screen and (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 500px;
+    grid-gap: 0 1.5rem;
+  }
+
+  main .title h1 {
+    font-size: 13.1875rem;
+    line-height: 434.41px;
+  }
+
+  main .text {
+    grid-column: span 3 / -5;
+    justify-content: space-between;
+  }
+
+  main .image {
+    grid-column: span 4 / -1;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1200px) {
+  main .title h1 {
+    font-size: 23.1875rem;
+  }
+
+  main .image {
+    align-self: end;
+  }
+}
